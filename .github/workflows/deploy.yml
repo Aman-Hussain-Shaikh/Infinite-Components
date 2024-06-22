@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install   # Adjust this if you have specific dependencies
+
+      - name: Build and deploy
+        run: |
+          # Build your project (if needed)
+          # For simple HTML/CSS, you might not need this step
+          # Replace with appropriate build commands if necessary
+          npm run build
+
+          # Deploy to GitHub Pages
+          git push origin main
+
