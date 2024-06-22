@@ -14,9 +14,12 @@ jobs:
 
       - name: Commit files
         run: |
-          git config --local user.email "theamazingpeace@gmail.com"
-          git config --local user.name "Aman-Hussain-Shaikh"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
           git add .
           git commit -m "Deploy HTML and CSS changes"
-          git push origin main
+
+          # Push changes using GitHub Actions token
+          git push https://github.com/Aman-Hussain-Shaikh/Infinite-Components.git HEAD:main
 
